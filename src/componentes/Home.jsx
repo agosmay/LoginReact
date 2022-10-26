@@ -4,7 +4,7 @@ import { AuthContext } from '../auth/AuthContext'
 
 export const Home = ()=> {
 	
-	const { isAuth , input } = useContext(AuthContext)
+	const { isAuth , input : user } = useContext(AuthContext)
 	
 	
 	return (
@@ -12,7 +12,7 @@ export const Home = ()=> {
 			<Nav />
 	
 			<h1>{isAuth ? "Autenticado con exito" : "Por favor inicie sesion"}</h1>
-			<h3>Bienvenido {isAuth ? input.email : "Invitado"}</h3>
+			<h3>Bienvenido {isAuth ? user.email : "Invitado"}</h3>
 		
 			
 		</>

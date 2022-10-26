@@ -30,13 +30,15 @@ export const useForm = () => {
 		const userLogged = {
 			id: Date.now(),
 			token: "1234",
-			email: email
+			email: email,
+			password : password
 		}
+	
 	
 		setUser(userLogged)
 		setIsAuth(true)
 		
-	
+
 	
 		
 		navigate("/", {
