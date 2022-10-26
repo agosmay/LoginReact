@@ -12,6 +12,7 @@ export const Home = ()=> {
 			<Nav />
 	
 			<h1>{isAuth ? "Autenticado con exito" : "Por favor inicie sesion"}</h1>
+			<h3>Bienvenido {isAuth ? input.email : "Invitado"}</h3>
 		
 			
 		</>

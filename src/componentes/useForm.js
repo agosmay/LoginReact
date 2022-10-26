@@ -10,7 +10,7 @@ export const useForm = () => {
 	
 	const { email , password } = input;
 	
-	const { isAuth, setIsAuth } = useContext(AuthContext)
+	const { isAuth, setIsAuth, setInput : setUser } = useContext(AuthContext)
 	
 	const handleChange = (e) => {
 		const {name, value} = e.target;
@@ -33,7 +33,7 @@ export const useForm = () => {
 			email: email
 		}
 	
-		setInput(userLogged)
+		setUser(userLogged)
 		setIsAuth(true)
 		
 	
