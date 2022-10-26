@@ -4,7 +4,7 @@ import { AuthContext } from './AuthContext'
 
 export const AuthProvider = ({ children }) => {
 	const [isAuth, setIsAuth] = useState(false)
-	const [input, setInput] = useState({})
+	const [user, setUser] = useState({})
 	
 	
 	
@@ -13,8 +13,8 @@ export const AuthProvider = ({ children }) => {
 			<AuthContext.Provider value={{
 				isAuth,
 				setIsAuth,
-				input,
-				setInput
+				user,
+				setUser
 			}}>
 			{children}
 			</AuthContext.Provider>

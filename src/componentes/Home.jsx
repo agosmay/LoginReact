@@ -4,8 +4,8 @@ import { AuthContext } from '../auth/AuthContext'
 
 export const Home = ()=> {
 	
-	const { isAuth , input : user } = useContext(AuthContext)
-	
+	const { isAuth , user } = useContext(AuthContext)
+	console.log(user)
 	
 	return (
 		<>
