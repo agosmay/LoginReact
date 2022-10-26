@@ -4,6 +4,7 @@ import { Home } from '../componentes/Home'
 import  Login from '../componentes/Login'
 import { PrivateHome } from '../componentes/PrivateHome'
 import  ProtectedRoutes from './ProtectedRoutes'
+import Layout from './Layout'
 
 export const AppRoutes = () => {
 	
@@ -12,14 +13,20 @@ export const AppRoutes = () => {
 			<Routes>
 				<Route path="*" element=
 					{<ProtectedRoutes>
-						<Route 
-							path="/private-home"
-							element={<PrivateHome />}
-						/>
-						<Route 
-							path="/otra"
-							element={<div>Otra Ruta</div>}
-						/>
+						<Layout>
+							<Routes>
+								
+									<Route 
+										path="/private-home"
+										element={<PrivateHome />}
+									/>
+									<Route 
+										path="/otra"
+										element={<div>Otra Ruta</div>}
+									/>
+								
+							</Routes>
+						</Layout>
 					</ProtectedRoutes>
 					}
 				/>

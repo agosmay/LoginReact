@@ -41,7 +41,7 @@ export const useForm = () => {
 
 	
 		
-		navigate("/", {
+		navigate("/private-home", {
 			
 			replace: true
 		})
