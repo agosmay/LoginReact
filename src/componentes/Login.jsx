@@ -5,12 +5,12 @@ const Login = ()=> {
 
 	const  {  handleChange, handleSubmit , email, password , user , setUser } = useForm();
 	
-	useEffect(() => {
+	/*useEffect(() => {
   const user = JSON.parse(localStorage.getItem('user'));
   if (user) {
    setUser(user);
   }
-}, []);
+}, []);*/
 	
 	
 	return (
