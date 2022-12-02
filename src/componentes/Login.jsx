@@ -1,14 +1,16 @@
-import React , {useState , useContext } from 'react';
+import React , {useState , useContext, useEffect } from 'react';
 import { useForm } from './useForm' 
-
-
-
-
-
 
 const Login = ()=> {
 
-	const  {  handleChange, handleSubmit , email, password } = useForm();
+	const  {  handleChange, handleSubmit , email, password , user , setUser } = useForm();
+	
+	useEffect(() => {
+  const user = JSON.parse(localStorage.getItem('user'));
+  if (user) {
+   setUser(user);
+  }
+}, []);
 	
 	
 	return (
