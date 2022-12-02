@@ -4,44 +4,54 @@ import { Home } from '../componentes/Home'
 import  Login from '../componentes/Login'
 import { PrivateHome } from '../componentes/PrivateHome'
 import  ProtectedRoutes from './ProtectedRoutes'
+import PublicRoutes from './PublicRoutes';
 import Layout from './Layout'
 
 export const AppRoutes = () => {
-	
 	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path="*" element=
-					{<ProtectedRoutes>
-						<Layout>
-							<Routes>
-								
-									<Route 
-										path="/private-home"
-										element={<PrivateHome />}
-									/>
-									<Route 
-										path="/otra"
-										element={<div>Otra Ruta</div>}
-									/>
-								
-							</Routes>
-						</Layout>
-					</ProtectedRoutes>
-					}
-				/>
-				<Route 
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <PublicRoutes url={"/private-home"}>
+              <Login />
+            </PublicRoutes>
+          }
+        />
+        <Route
+          path="/private-home"
+          element={
+            <ProtectedRoutes url={"/login"}>
+              <Layout>
+                <PrivateHome />
+              </Layout>
+            </ProtectedRoutes>
+          }
+        />
+
+        <Route
+          path="/otra"
+          element={
+            <ProtectedRoutes url={"/login"}>
+				<Layout>
+					<div>Otra Ruta</div>
+				</Layout>
+            </ProtectedRoutes>
+          }
+        />
+		<Route 
 				path="/"
 				element={<Home />}
-				/>
-				<Route 
+		/>
+		<Route 
 				path="/login"
 				element={<Login />}
-				/>	
-			</Routes>
-		</BrowserRouter>
-	
-	);
+		/>	
+
+        <Route path="*" element={<h1>404</h1>} />
+      </Routes>
+    </BrowserRouter>
+  );
 	
 }
-

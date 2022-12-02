@@ -3,7 +3,7 @@ import { AuthContext } from '../auth/AuthContext'
 import { Navigate } from 'react-router-dom';
 
 
-const ProtectedRoutes = ({children}) => {
+const ProtectedRoutes = ({children, url}) => {
 	
 
 	
@@ -14,9 +14,13 @@ const ProtectedRoutes = ({children}) => {
 		
 	}
 	
-	return <Navigate to="/login" />
+	return <Navigate to={url} />
 	
 	
 }
 
 export default ProtectedRoutes;
+
+
+
+
