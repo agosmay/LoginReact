@@ -10,7 +10,7 @@ export const useForm = () => {
 	
 	const { email , password } = input;
 	
-	const { isAuth, setIsAuth, setUser } = useContext(AuthContext)
+	const { isAuth, setIsAuth, setUser , user } = useContext(AuthContext)
 	
 	const handleChange = (e) => {
 		const {name, value} = e.target;
@@ -37,7 +37,7 @@ export const useForm = () => {
 	
 		setUser(userLogged)
 		setIsAuth(true)
-		
+		localStorage.setItem('user', JSON.stringify(userLogged))
 
 	
 		
@@ -52,7 +52,7 @@ export const useForm = () => {
 		
 	}
 	
-	return  { handleChange, handleSubmit , email , password }
+	return  { handleChange, handleSubmit , email , password , user , setUser }
 
 
 
